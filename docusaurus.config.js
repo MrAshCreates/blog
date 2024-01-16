@@ -98,9 +98,8 @@ const config = {
                     items: [
                         
                         {
-                            type: 'docSidebar',
-                            sidebarId: 'tutorialSidebar',
                             label: 'Guides',
+                            to: '/docs/category/linux-guides',
                         },
                         {
                             label: 'Sort Guides by tags',
