@@ -95,9 +95,12 @@ const config = {
             style: 'dark',
             links: [{
                     title: 'Docs',
-                    items: [{
+                    items: [
+                        {
+                            type: 'docSidebar',
+                            sidebarId: 'tutorialSidebar',
+                            position: 'left',
                             label: 'Guides',
-                            to: '/docs',
                         },
                         {
                             label: 'Sort Guides by tags',
