@@ -29,7 +29,7 @@ Thank you for being a part of this journey with me. Stay tuned for more exciting
 
 ### Next recommended read
 
-- [Read the Arch Linux Guide](../../docs/Linux/archguide.mdx)
+- [Read the Arch Linux Guide](../../docs/Linux/archguide)
 
 ### Last Updated: Jan 16th, 2024
 
