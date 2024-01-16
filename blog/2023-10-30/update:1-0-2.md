@@ -5,7 +5,7 @@ authors: [asher]
 tags: [blog-updates]
 ---
 
-![update banner](/img/update.jpg)
+![update banner](../../static/img/update.jpg)
 
 Hello, everyone! Sorry that this update took so long I'm planning some changes to how this site will function and look so expect changes to start being rolled out in the coming months.
 
@@ -29,8 +29,8 @@ Thank you for being a part of this journey with me. Stay tuned for more exciting
 
 ### Next recommended read
 
-- [Read the Arch Linux Guide](../2023-10-19/archguide.mdx)
+- [Read the Arch Linux Guide](../../docs/Linux/archguide.mdx)
 
-### Last Updated: Oct 30th, 2023
+### Last Updated: Jan 16th, 2024
 
-Next update will be on Nov 14th.
+Next update: no expected updates
