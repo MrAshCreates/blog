@@ -25,7 +25,7 @@ Additionally, I'm committed to providing regular updates to the blogs. My goal i
 
 ### Upcoming Arch Linux Tutorial
 
-In this update, I'm keeping it simple and focusing on one particular blog post that I'm really excited about the [Arch Linux Guide](../../docs/Linux/archguide.mdx). I'm personally invested in this topic, and I want to provide the most up-to-date and comprehensive guide possible.
+In this update, I'm keeping it simple and focusing on one particular blog post that I'm really excited about the [Arch Linux Guide](../../docs/Linux/archguide). I'm personally invested in this topic, and I want to provide the most up-to-date and comprehensive guide possible.
 
 This tutorial will walk you through the entire Arch Linux installation process, from start to finish. You can expect to find not only the basic installation steps but also tips and tricks that I've learned along the way. I'll even share some of my favorite apps and features that make Arch Linux stand out.
 
