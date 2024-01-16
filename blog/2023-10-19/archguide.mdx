@@ -1,0 +1,490 @@
+---
+slug: archguide
+title: 'Arch Linux Guide'
+authors: [asher]
+tags: [Linux, ArchLinux, KDE, Guide, Tutorial]
+---
+
+## Arch Linux Installation and Usage Guide
+
+In this guide, I'll take you through the installation process of Arch Linux using the `archinstall` command.
+We'll also cover some essential tasks like updating your system and installing applications.
+<!--truncate-->
+
+## Installing Arch Linux with archinstall
+
+Now I am going to assume anyone following this installation has either never touched anything other than windows or hasn't messed with arch.
+This tutorial will take you out of your comfort zone but it should give you a fun experience and hopefully a working system.
+
+For this tutorial you will need:
+
+- a functional computer or laptop with Windows or Linux that does not have an ARM chip. ( The better the computer the better the experience you will get)
+- an unused USB Drive with at least 8GB of storage (usb 3.0 recommended unless your device chosen for this doesn't support it)
+- Some type of Network Connection available. (Ethernet, Hotspot, Wifi)
+- [BalenaEtcher](https://etcher.balena.io/#download-etcher) installed on computer (/downloads)
+- the [ArchLinux](https://archlinux.org/download/) iso installed on computer (/downloads)
+- Knowledge of you computers bios and how to open it. (if you don't know I have information below)
+
+If you already know how to do the setup process for the tools we need you can skip the three Setup sections and go straight to [Step 1](/archguide#step-1-boot-into-the-arch-linux-live-environment)
+
+## Setup 1: In case you need help with the downloads
+lets's go over to the arch linux website highlighted above and we will first download the archlinux iso.
+It's recommended to download this through the torrent links, but I find most people like the direct download to be more comfortable.
+So scroll down to "HTTP Direct Downloads" and either download the [world-wide download](https://geo.mirror.pkgbuild.com/iso/latest/archlinux-x86_64.iso) or the country specific one.
+You are going to download the `archlinux-x86_64.iso` file to your downloads.
+Okay next we will download BalenaEtcher from the link above.
+Next open the BalenaEtcher installer and go through the installation process.
+
+## Setup 2: Create a bootable USB with Arch
+Okay now that we have the required utilities to create the bootable usb we can start making it.
+We will now open Balena unless it is already opened and go ahead and plug in your USB device.
+
+:::danger Warning
+
+**Attention:** This step will take your USB and erase all data from it.
+If you have important data on this USB, make sure to back it up to a different USB drive or a computer device before proceeding.
+Furthermore, it's essential to note that continuing down this tutorial will also erase data from the computer on which you are installing Arch Linux.
+Please ensure you have a backup of any crucial data on your computer to avoid any data loss.
+
+Proceed with caution.
+
+:::
+
+For `Flash from file` you will select the Arch ISO usually located at `/downloads/archlinux-x86_64.iso`
+For `Select Target` Select the USB device that matches the correct name and/or storage.
+Now click `Flash!` Approve the usable of balena with admin permissions when you see the prompt and then just wait.
+It will now Flash the iso to the usb device and then verify integrity.
+You can skip this but it is recommended not to.
+
+The program will automatically notify you on completion of the Flash if you are on a different application or it will say `Done` if still on the app.
+When you see this you can Leave it in the computer if this is the device you are intending to install arch on.
+Otherwise remove it from this device and plug it into the "Arch Computer"
+
+Congratulations! You have successfully acquired the required utilities to complete this tutorial.
+
+## Setup 3: preparing your computers BIOS/UEFI
+
+So this step will require some troubleshooting as it can be a little tricky on getting everything to work correctly
+First we need to enter the BIOS/UEFI system. To do this we will power off the computer completely and locate the BIOS button.
+This can be Tricky to locate but I have listed some buttons that Manufacturers tend to use.
+Locate Your Manufacturer below and try some of the key combinations that are available.
+
+```
+BIOS Keys by Manufacturer
+Here's a list of common BIOS keys by brand. Depending on the age of your model, the key may be different.
+
+ASRock: F2 or DEL
+ASUS: F2 for all PCs, F2 or DEL for Motherboards
+Acer: F2 or DEL
+Dell: F2 or F12
+ECS: DEL
+Gigabyte / Aorus: F2 or DEL
+HP: F10
+Lenovo (Consumer Laptops): F2 or Fn + F2
+Lenovo (Desktops): F1
+Lenovo (ThinkPads): Enter then F1.
+MSI: DEL for motherboards and PCs
+Microsoft Surface Tablets: Press and hold volume up button.
+Origin PC: F2
+Samsung: F2
+Toshiba: F2
+Zotac: DEL
+
+```
+**Credits to:** [tomshardware](https://www.tomshardware.com/reviews/bios-keys-to-access-your-firmware,5732.html) for the text I have provided
+
+Proceed by holding one of those keys and then clicking the power button. You should see the device boot screen and then be dropped into a bios. 
+You might also be thrown into a Boot Menu which you can use later in this tutorial.
+Once you enter bios you will most likely need to modify some settings to ensure that the installation will be successful.
+The bios settings tend to be moved around depending on Manufacturers.
+So don't be afraid of checking all the tabs and getting comfortable with the Bios of your computer.
+
+First we will need to disable the `Secure Boot`. This is often a setting found in the security tab but it can also be located in the USB tab.
+
+
+:::tip Note
+
+I recommend searching **"How to ______ on a _______"** on [Youtube](http://www.youtube.com/)
+
+The first blank will be the thing you need help completing.
+The second should be your laptop manufacturer and model or computer motherboard manufacturer and model
+
+**Examples:**
+
+How to `Enter Bios` on a `Lenovo Thinkpad L14`
+
+How to `Disable Secure Boot` on a `VivoBook ASUS Laptop X512JA`
+
+This can go for the rest of the guide for anything I don't cover.
+But you can also post a comment with a question and I can update this to include your questions.
+If you need help from me asap then try messaging me on discord.
+:::
+
+Once you have disabled this sometimes you can proceed into to [Step 1 Booting into the USB](/archguide#step-1-boot-into-the-arch-linux-live-environment)
+I recommend checking out the other steps though just in case. This will prevent any system issues that could be caused by bios. Which makes troubleshooting a bit less complicated.
+
+Here are some other BIOS options we can mess with.
+
+First is the hardware acceleration. Some Manufacturers add a hardware acceleration system to their hard drives and other components.
+This can cause a part to be unreadable to the arch live environment. Disabling the hardware acceleration can fix this.
+
+Another one can be Encryption on the Disk it will also prevent arch from making changes to the disk. Simply disabling this can fix that.
+
+Wiping the disk. This will erase everything from the disk and allow arch to make changes to the disk.
+But Warning: This will remove windows and all it's data which includes your files and possibly important files info.
+Remember to backup files on a different computer or Storage device. To avoid data loss.
+
+Finally you could loose the drivers to a Network card. This is how the computer know how to communicate with your network card and give you Internet access.
+Most Laptop drivers will just work while custom built PCs can have unusual Network cards that aren't in the default drivers.
+Make Sure to download them to a usb, or find the internet card package on the [AUR](https://aur.archlinux.org/packages?O=0&SeB=nd&K=driver&outdated=off&SB=p&SO=d&PP=50&submit=Go) and install this package when you enter the Arch live environment.
+
+If I missed anything or have a problem post a comment with images and a full description of the errors or what you were doing.
+
+## Step 1: Boot into the Arch Linux Live Environment
+Begin by booting your computer from the Arch Linux installation media.
+To do this you will need to go into the boot menu of your computer or locate the option to boot from a USB in the BIOS.
+For the BIOS go to either the Exit or USB tab. you should see a list of entry points one of them should be the name of your USB or under something like `Arch-Boot`
+Click this and you should see the arch live environment boot onto your screen.
+When everything loads click `Boot Arch Linux (x86_64)`
+you will be thrown into a tty shell under the root user and you should see this `root@archiso ~ #`
+
+
+## Step 2: Getting Wifi
+
+First course of action is to get internet access, there is other things like font, time, screen size, etc.
+But in most cases you will not need to modify these to install arch successfully.
+
+To get internet access there is a few methods but I will go over getting Wifi because that is the most common and most confusing one to get up and running.
+But in case you are doing ethernet or a hotspot they are usually plug and play. In some cases you will need to check out the [arch wiki](https://wiki.archlinux.org/title/Installation_guide#Connect_to_the_internet) for any issues that arise.
+
+
+We will be using the Station commands found in IWD to complete this step. here are all the commands that are available with station
+
+```
+
+Station:
+station list                                        List devices
+station <wlan> connect <"network name"> [security]  Connect to network
+station <wlan> connect-hidden <"network name">      Connect to hidden network
+station <wlan> disconnect                           Disconnect
+station <wlan> get-networks [rssi-dbms/rssi-bars]   Get networks
+station <wlan> get-hidden-access-points [rssi-dbms] Get hidden APs
+station <wlan> scan                                 Scan for networks
+station <wlan> show                                 Show station info
+
+```
+
+first we will run the following command `iwctl` you should see `[iwd]# ` from here we will run the following command
+`station list`
+after we run the command we should see the following
+
+```
+[iwd]# station list
+                            Devices in Station Mode                        *
+----------------------------------------------------------------------------
+  Name                  State            Scanning
+----------------------------------------------------------------------------
+  wlan0                 disconnected     false
+
+```
+what ever wlan is listed you should use that for the next few commands.
+
+Next we will run `station <wlan> scan` so in my case this would be `station wlan0 scan`
+this will scan for current networks
+
+next we will run `station <wlan> connect <"network name">`
+In my case if my network name is `RaisingCanes Free Wifi` then I would run this command `station wlan0 connect RaisingCanes\Free\Wifi`
+If the wifi name has spaces you will use a backslash to replace it.
+If the network contains a password once you hit enter you will see a prompt asking for a password so enter it then.
+
+next we will run `station <wlan> show`, so in my case this would be `station wlan0 show`
+this will show if you were successful with the previous commands.
+If it says connected and the ip addresses are filled in go ahead and run the command `exit`
+
+If you have any issues repeat this step or check the arch wiki for more information.
+
+### Edit pacman.conf(optional)
+:::tip Note
+If you have slower internet I recommend editing the pacman.conf to support ParallelDownloads
+
+This can help increase downloads by downloading more packages at once.
+
+First run `nano /etc/pacman.conf` and click the down arrow until you reach `# Misc options`
+
+You should see something like this
+```
+# Misc options
+
+#UseSyslog
+#Color
+#NoProgressBar
+CheckSpace
+#VerbosePkgLists
+#ParallelDownloads = 5
+```
+we will edit pacman.conf to look like this
+
+```
+# Misc options
+
+#UseSyslog
+#Color
+#NoProgressBar
+CheckSpace
+#VerbosePkgLists
+
+#you can change this to any number that will help increase the speed of downloads. Remember to high will make it worse. I recommend anything from 3-15
+ParallelDownloads = 15
+
+```
+After you do this click `ctrl + x` then `y` then `enter`
+
+You should see it save these edits to the file and now you can continue to the next step
+:::
+
+
+
+## Step 3: Arch Install!
+
+Now anything after this command is mostly subjective to my prefrences but it will help you follow the rest of this guide when it comes to customizations and troubleshooting..
+
+Okay run `archinstall` this can take a minute to load on bad internet so don't freak out.
+
+You should see it load a few options we can edit to change how our system will act.
+First we will edit all the options that are blank.
+After you can go on your own and edit the rest and I will show my personal config at the bottom.
+
+### Mirrors
+First we will edit our mirror region. This is the region you are located at currently.
+It should be the second option, so click the down arrow so that you see this `>` in front of the `Mirrors` option like this `>  Mirrors` and hit enter.
+
+Now you should see `> Mirror region` already selected so hit enter.
+
+Now use the up/down arrows to locate your region or the closest to you.
+Since I am in the United States I clicked the up arrow which will bring you to the bottom of the list if at the top.
+Now I kept clicking it till it covered the `>  [ ] United States` Option then hit the tab button to select it. Now I see `> [*] United States` but depending on your location this will look differently.
+Once you find your region and select it you can go ahead and hit enter. Then go ahead and click the down arrow till you reach `>  Back` and then hit enter once more.
+
+### Disk configuration
+Now we will edit our Disk config. This is where arch will  be installed.
+It should be the forth option, so click the down arrow so that you see this `>` in front of the `Disk configuration` option like this `>  Disk configuration` and hit enter.
+
+You should see `> Use a best-effort default partition layout` already selected so hit enter.
+
+Now use the arrows to locate the Disk you are intending arch on.
+This shouldn't be too difficult but if you don't know the storage plus the model on your disk and you have multiple disk for some reason then you will need to do some educated guessing.
+
+For me I have two disk currently plugged in. My Hard drive and the USB stick, I know that the brand of my USB is SanDisk.
+So out of the two options I already know which is the hard drive. But In case I didn't I can check storage. My USB has an Insane 256GBs while the Hard Drive has only 
+
+
+
+
+
+
+
+
+
+
+
+
+- ~~update 1.0.2~~ : finish the installation guide. **Delayed Till Update 1.0.4**
+
+
+
+
+## What is pacman
+
+Pacman is the **pac**kage **man**ager of Arch Linux. just like how ubuntu has `apt` we have `pacman`
+It has many purposes with the main one being downloading new software and updating old ones.
+Below I have listen the most useful commands and how to upgrade pacman's capabilities.
+
+## Unlocking pacman's capabilities
+first we will open the terminal on your computer. I recommend looking for the search bar on the desktop and typing `terminal`. This will show the apps that are listed as terminals.
+However If you followed the installation guide you should have `Konsole` which is the default terminal for KDE Plasma.
+But you could also have `Black box` which is the default for Gnome.
+
+once in the terminal we will run a few commands to edit the `pacman.conf` file
+:::danger Caution
+
+You will need Superuser permissions to complete this process as messing with this file could lead to you not being able to upgrade or use your system.
+I recommend only changing what I change as that is all you will really need.
+:::
+
+First run `sudo nano /etc/pacman.conf` you should be prompted for the super user password to continue.
+
+You should see a file open within the terminal. Your mouse will not be very helpful in this part so use the keyboard arrows to navigate.
+
+Click the down arrow until you see `#IgnorePkg =` the best I can simplify it is if you download a package/app from the internet and installed it you will write the name of it here.
+This basically just prevents pacman from searching for a package that doesn't exist in the AUR. for instance I have `#IgnorePkg = Codux cider windscribe` which is all software I searched up and downloaded.
+But also In my case I use a alpha version of cider. So although cider exist in the aur it isn't cider2.
+
+I could have also put cider in the `#NoUpgrade`
+
+Now go down til you see `# Misc options` you should see something similar to this below
+
+```
+# Misc options
+
+#UseSyslog
+#Color
+#NoProgressBar
+CheckSpace
+#VerbosePkgLists
+#ParallelDownloads = 5
+```
+
+we will edit pacman.conf to look like this
+
+```
+# Misc options
+
+UseSyslog
+Color
+#NoProgressBar
+CheckSpace
+VerbosePkgLists
+ParallelDownloads = 15
+ILoveCandy
+```
+ILoveCandy is a secret that kinda turns the progress bar into PacMan.
+
+
+
+
+
+
+
+##What you should see
+
+Once you finish You should have something similar too this but not exactly this.
+```
+GNU nano 7.2             /etc/pacman.conf              Modified
+
+#
+# /etc/pacman.conf
+#
+# See the pacman.conf(5) manpage for option and repository directives
+
+#
+# GENERAL OPTIONS
+#
+[options]
+# The following paths are commented out with their default values listed.
+# If you wish to use different paths, uncomment and update the paths.
+#RootDir     = /
+#DBPath      = /var/lib/pacman/
+#CacheDir    = /var/cache/pacman/pkg/
+#LogFile     = /var/log/pacman.log
+#GPGDir      = /etc/pacman.d/gnupg/
+#HookDir     = /etc/pacman.d/hooks/
+HoldPkg     = pacman glibc
+#XferCommand = /usr/bin/curl -L -C - -f -o %o %u
+#XferCommand = /usr/bin/wget --passive-ftp -c -O %o %u
+#CleanMethod = KeepInstalled
+Architecture = auto
+
+#IgnorePkg   = Codux cider windscribe
+#IgnorePkg   =
+#IgnoreGroup =
+
+#NoUpgrade   =
+#NoExtract   =
+
+# Misc options
+UseSyslog
+Color
+#NoProgressBar
+CheckSpace
+VerbosePkgLists
+ParallelDownloads = 15
+ILoveCandy
+
+# By default, pacman accepts packages signed by keys that its local keyring
+# trusts (see pacman-key and its man page), as well as unsigned packages.
+SigLevel    = Required DatabaseOptional
+LocalFileSigLevel = Optional
+#RemoteFileSigLevel = Required
+
+# NOTE: You must run `pacman-key --init` before first using pacman; the local
+# keyring can then be populated with the keys of all official Arch Linux
+# packagers with `pacman-key --populate archlinux`.
+
+#
+# REPOSITORIES
+#   - can be defined here or included from another file
+#   - pacman will search repositories in the order defined here
+#   - local/custom mirrors can be added here or in separate files
+#   - repositories listed first will take precedence when packages
+#     have identical names, regardless of version number
+#   - URLs will have $repo replaced by the name of the current repo
+#   - URLs will have $arch replaced by the name of the architecture
+#
+# Repository entries are of the format:
+#       [repo-name]
+#       Server = ServerName
+#       Include = IncludePath
+#
+# The header [repo-name] is crucial - it must be present and
+# uncommented to enable the repo.
+#
+
+# The testing repositories are disabled by default. To enable, uncomment the
+# repo name header and Include lines. You can add preferred servers immediately
+# after the header, and they will be used before the default mirrors.
+
+#[core-testing]
+#Include = /etc/pacman.d/mirrorlist
+
+[core]
+Include = /etc/pacman.d/mirrorlist
+
+#[extra-testing]
+#Include = /etc/pacman.d/mirrorlist
+
+[extra]
+Include = /etc/pacman.d/mirrorlist
+
+# If you want to run 32 bit applications on your x86_64 system,
+# enable the multilib repositories as required here.
+
+#[multilib-testing]
+#Include = /etc/pacman.d/mirrorlist
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+
+[kde-unstable]
+Include = /etc/pacman.d/mirrorlist
+
+
+# An example of a custom package repository.  See the pacman manpage for
+# tips on creating your own repositories.
+
+#[custom]
+#SigLevel = Optional TrustAll
+#Server = file:///home/custompkgs
+
+```
+
+
+
+
+
+## Using pacman 
+Syu & Syyu: these commands will the the most important as they update all packages on the system except those on the `ignorepkg` line of the pacman.conf
+
+
+
+
+
+
+
+
+### Last Updated: Oct 20th, 2023
+
+- update 1.0.4 : finish the installation guide
+- update 1.0.4 : tips on how to use pacman and installing the recommend packages/apps that I use
+- update 1.0.6 : how to customize KDE plasma 5 to your style
+- update 1.0.7 : gaming on arch
+(these are just to help keep me on track and give you something to expect. I am updating the blogs pretty regularly as of now to get the site going)
