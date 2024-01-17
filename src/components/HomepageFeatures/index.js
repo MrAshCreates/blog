@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
     {
         title: 'Original blogs',
-        Svg: require('@site/static/img/logo.svg').default,
+        Svg: require('@site/static/img/blog.svg').default,
         description: (
             <>
             Read original blogs on topics I'm interested in.
@@ -16,7 +16,7 @@ const FeatureList = [
     },
     {
         title: 'Guides to life',
-        Svg: require('@site/static/img/logo.svg').default,
+        Svg: require('@site/static/img/laptop-open-icon.svg').default,
         description: (
             <>
             Life can get hard, and sometimes you need help.
@@ -27,7 +27,7 @@ const FeatureList = [
     },
     {
         title: 'I use Arch Linux',
-        Svg: require('@site/static/img/logo.svg').default,
+        Svg: require('@site/static/img/arch-linux.svg').default,
         description: (
             <>
             I am an active advocate for the linux operating system.
