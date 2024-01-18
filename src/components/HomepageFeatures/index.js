@@ -9,7 +9,7 @@ const FeatureList = [
         description: (
             <>
             Read original blogs on topics I'm interested in.
-            I blog not only my life but also the trying out random tech I have interest in.
+            I blog not only about my life but also the trying out random tech I have interest in.
             Many other subjects get blogged about like my recommendations, science, tech, books, and plenty more!
             </>
         ),
@@ -21,7 +21,7 @@ const FeatureList = [
             <>
             Life can get hard, and sometimes you need help.
             I have many guides on my site to many tech related things.
-            tech is my life and it should be yours too!
+            Tech is my life and it should be yours too!
             </>
         ),
     },
@@ -32,11 +32,12 @@ const FeatureList = [
             <>
             I am an active advocate for the linux operating system.
             Not only do I run Arch Linux as a daily driver but this site also runs off an Arch Linux server.
-            You could also be using linux open my Arch Linux Guide and get started!
+            You could also be using Linux, open my Arch Linux Guide and get started!
             </>
         ),
     },
 ];
+
 
 function Feature({Svg, title, description}) {
     return (

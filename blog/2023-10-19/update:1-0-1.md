@@ -5,7 +5,6 @@ authors: [asher]
 tags: [blog-updates]
 ---
 
-![update banner](../../static/img/update.jpg)
 
 Hello, everyone! I wanted to provide an update about the direction of my blog. It's been an exciting journey as a small developer who recently started blogging, and I've got some great news to share.
 
@@ -25,7 +24,7 @@ Additionally, I'm committed to providing regular updates to the blogs. My goal i
 
 ### Upcoming Arch Linux Tutorial
 
-In this update, I'm keeping it simple and focusing on one particular blog post that I'm really excited about the [Arch Linux Guide](../../docs/Linux/archguide). I'm personally invested in this topic, and I want to provide the most up-to-date and comprehensive guide possible.
+In this update, I'm keeping it simple and focusing on one particular blog post that I'm really excited about [Arch Linux Guide](../../docs/Linux/archguide). I'm personally invested in this topic, and I want to provide the most up-to-date and comprehensive guide possible.
 
 This tutorial will walk you through the entire Arch Linux installation process, from start to finish. You can expect to find not only the basic installation steps but also tips and tricks that I've learned along the way. I'll even share some of my favorite apps and features that make Arch Linux stand out.
 
@@ -41,6 +40,6 @@ Thank you for being a part of this journey with me. Stay tuned for more exciting
 
 - [Read the Arch Linux Guide](../../docs/Linux/archguide)
 
-### Last Updated: Jan 16th, 2024
+### Last Updated: Jan 18th, 2024
 
 Next update: no expected updates

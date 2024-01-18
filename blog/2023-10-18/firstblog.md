@@ -26,4 +26,6 @@ Have any questions or topics you'd like me to explore? Feel free to leave a comm
 
 ### Last Updated: Oct 20th, 2023
 
-update 1.0.4 : this will be remade to fit what I wanted to say verses what I needed to get out.
+update 1.0.4 : this will be remade to fit what I wanted to say versus what I needed to get out.
+
+

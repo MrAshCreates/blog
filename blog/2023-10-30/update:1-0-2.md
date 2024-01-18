@@ -5,17 +5,15 @@ authors: [asher]
 tags: [blog-updates]
 ---
 
-![update banner](../../static/img/update.jpg)
-
-Hello, everyone! Sorry that this update took so long I'm planning some changes to how this site will function and look so expect changes to start being rolled out in the coming months.
+Hello, everyone! Sorry that this update took so long. I'm planning some changes to how this site will function and look so expect changes to start being rolled out in the coming months.
 
 ### Content and Updates
 
-So due to the delayed update and the content being planned I will not be releasing any updates to or new articles until the Nov 14th 2023.  I will return back to weekly once everything planned is released and running smoothly. I will continue minor bug fixes and blog grammar changes whenever I can. Those can usually be found at the bottom of a blog with plans for changes.
+So due to the delayed update and the content being planned I will not be releasing any updates to or new articles until Nov 14th 2023.  I will return back to weekly once everything planned is released and running smoothly. I will continue minor bug fixes and blog grammar changes whenever I can. Those can usually be found at the bottom of a blog with plans for changes.
 
 ### Upcoming blogs
 
-Next update, I will be releasing two post with the help of my IT friend [bailey] and my IT teacher. They each have their own post planned
+Next update, I will be releasing two posts with the help of my IT friend [bailey] and my IT teacher. They each have their own post planned
 
 This tutorial will walk you through the entire Arch Linux installation process, from start to finish. You can expect to find not only the basic installation steps but also tips and tricks that I've learned along the way. I'll even share some of my favorite apps and features that make Arch Linux stand out.
 
@@ -31,6 +29,6 @@ Thank you for being a part of this journey with me. Stay tuned for more exciting
 
 - [Read the Arch Linux Guide](../../docs/Linux/archguide)
 
-### Last Updated: Jan 16th, 2024
+### Last Updated: Jan 18th, 2024
 
 Next update: no expected updates
